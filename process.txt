@@ -1,0 +1,74 @@
+01. SET UP
+    a. node.js DOWNLOAD
+        node.js 홈페이지에 가서 다운로드를 받는다. 
+        
+        node.js를 설치하면 npm( node package management )도 같이 설치된다. 
+    b. 파일을 만들고 git과 github 연결하기.
+        VSC에서 작업.
+    c. 초기값 설정.
+        - 터미널에서 npm init으로 초기값을 설정하면, package.json 파일 생성됨. 
+        
+        - package.json 파일 속의 scripts 부분을 
+          "dev" : "node index.js" 로 설정한다. 
+          위와 같이 하는 이유는 npm을 이용하여 실행하기 위함이다.
+          앞으로 터미널에 npm run dev를 입력하면 된다.     
+    d. express DOWNLOAD
+        터미널에서  npm i express 명령어를 입력한다. 
+        express가 설치되면서 package.json 안에 dependencies가 추가된다. 
+        
+        * 폴더안에 node_modules의 폴더가 새로생긴다. 
+          너무 훌륭한 기능 중 하나는 위의 과정을 
+          dependencies가 추가된 package.json과 index.js만 있다면,
+          npm i 명령어 만으로 어느누구나 같은 파일을 만들 수 있다는 점이다.           
+    e. express로 서버 설정
+        express는 서버를 만들 때 사용하는 패키지이다.     
+        
+        - index.js 안에
+            const express = require("express");
+            const app = express();
+          를 하면 서버가 작동되는 앱을 만든 것이다.       
+    f. babel 설치
+        babel이란, 최신 js문법을 사용하고 싶은 사람들에게 
+        도움이 되는 자바스크립트 컴파일러이다.
+
+       - npm install @babel/core @babel/node --save-dev 명령어로 설치
+       - package.json 안에 devDependencies가 생성되어있을텐데 
+         이것은 개발자들이 개발을 더 잘할수 있도록 도와주는 패키지들을
+         모아둔 것이라고 생각하면 된다.
+       - package.json속 scripts의 dev 명령어를 컴파일 할때마다 
+         작성한 최신문법을 node.js가 이해할 수 있도록 변경해야하는데
+         기존에 작성한 dev 명령어를 아래와 같이 변경해준다.
+         "dev":"bable-node index.js"           
+    g. nodemon 설치
+        nodemon이란, 컴파일을 자동으로 해주는 패키지이다. 
+        
+        - npm i nodemon --save-dev 로 패치한다. 
+        - devDependencies 안에 생성된것이 확인 될 것이다.
+        - 이후 package.json속 scripts의 dev 명령어를 또 바꿔주어야한다.
+          "dev":"bable-node index.js"를
+          "dev":"nodemon --exec bable-node index.js"로 바꿔준다.
+        
+    SET UP finish!
+
+02. SERVER
+    a. Make server
+      import express from "express" /  const app = express() / const port = "4000" / app.lisene(port, 함수 )
+    b. request
+        번역하면 "요청"  
+        유저가 웹페이지에서 google.com을 입력해서 결과를 얻고 싶다.
+        app.get("/", (req,res) => ㅇㅁㄴㄻㄴㅇㄴㅇ)
+          > 홈페이지로 들어오는 요청이 있을 경우 뒤의 함수를 실행한다. 
+        User > browser > me
+
+        크게보아 유저의 요청을 받는 것 이라고 생가하면 됀다.  
+    c. response
+        request, 요청이 들어왔으면 응답을 해주는 것이 인지상정.
+        홈에 접속하려는 유저에게 홈의 페이지를 전달해 줘야하는 것 처럼
+        이런 관계이다. 
+    d. Middleware
+        미들웨어란 용어를 해석해보면 가운데 있는 소프트웨어 라고 해석됀다.
+        app.use(...) 라는 함수를 사용하여, app.get() 함수를 사용하기전에
+        실행되는 함수이다.
+
+        미들웨어는 req, res, next 아큐먼트가 존재하며, 
+        가운데서 컨트롤이 가능하기때문에 생각보다 파워가 쌔다고 느껴진다.
