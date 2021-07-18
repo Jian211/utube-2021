@@ -77,3 +77,23 @@
         npm i morgan으로 다운이 가능하며,
         서버에 import를 해준다. 
         5개의 속성 중 맘에드는 속성을 골라서 사용이 가능하다. 
+
+03. ROUTER
+    a. What is router?
+      라우터는 url과 controller를 관리하기 쉽게 해준다.
+    b. Make router
+      express를 통해 라우트를 만드는 것은 간단하다.
+      const videoRouter = express.router(); 
+      위 명령어가 라우트를 만든 것이다. 그 후 
+      app.use("/video", videoRouter) 
+      를 통하여 연결 시켜준다.
+    c. 분리시켜 정리하기
+      파일을 분리하여 저장하고 관리하는게 모든면에서 효율적이다.
+      분리할 때 조심해야할 부분은 import와 export를 잘 써서 오류가 나지 않게 하는 것이다.
+
+04. CONTROLLER
+    a. 컨트롤러를 분리할 파일을 만든다.
+    b. 각각의 라우터와 컨트롤러는 어떻게 import시킬까?
+      한개의 라우터에 다양한 기능들이 있는 컨트롤러를 연결시키기 위해서는
+      const 앞에 export를 써주면 가능하다. 
+    
