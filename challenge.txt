@@ -1,0 +1,6 @@
+7/20
+    Using the blueprint complete the server.js file and create an Express server.
+    This server should have 4 GET routes.
+    The routes are /, /about, /contact and /login.
+    All the routes should return HTML to the client.
+
