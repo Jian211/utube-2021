@@ -1,19 +1,16 @@
 import express from "express"
-import morgan from "morgan";
-import globalRouter from "./routers/globalRouter";
-import userRouter from "./routers/userRouter";
-import videoRouter from "./routers/videoRouter";
 
-const PORT = 4000;
 const app = express();
 
-// Routers
-app.use("/", globalRouter);
-app.use("/user",userRouter);
-app.use("/video",videoRouter);
+const handleHome    = (req, res) => { return res.send("HOME PAGE")};
+const handleAbout   = (req, res) => { return res.send("ABOUT")};
+const handleContact = (req, res) => { return res.send("Contact")};
+const handleLogin   = (req, res) => { return res.send("Login")};
 
-// Middleware
-app.use(morgan("dev"));
 
+app.get("/", handleHome);
+app.get("/about", handleAbout);
+app.get("/contact", handleContact);
+app.get("login",handleLogin);
 
 app.listen(PORT,() => console.log(`Server lisenting`));
