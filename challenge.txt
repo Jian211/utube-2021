@@ -4,3 +4,8 @@
     The routes are /, /about, /contact and /login.
     All the routes should return HTML to the client.
 
+7/21
+    URL Logger: This middleware should log the URL that is being visited.
+    Time Logger: This middleware should log the year, month and day o   f the request.
+    Security Logger: This middleware should log secure if the protocol is https     else log insec  ure.
+    Protector Middleware: This middleware should stop the user if it's trying to go to /protected
