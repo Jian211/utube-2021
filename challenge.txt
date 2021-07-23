@@ -9,3 +9,19 @@
     Time Logger: This middleware should log the year, month and day o   f the request.
     Security Logger: This middleware should log secure if the protocol is https     else log insec  ure.
     Protector Middleware: This middleware should stop the user if it's trying to go to /protected
+
+7/23
+    Create 3 routers: globalRouter, storyRouter and userRouter
+    Inside of the routers create the following GET routes:
+    /
+    /trending
+    /new
+    /join
+    /login
+    /users
+    /users/:id
+    /users/edit-profile
+    /stories/:id
+    /stories/:id/edit
+    /stories/:id/delete
+    Distribute these routes between the globalRouter, storyRouter and userRouter
