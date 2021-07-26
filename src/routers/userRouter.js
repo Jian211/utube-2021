@@ -1,9 +1,10 @@
 import express from "express";
+import { seeUser,editProfile,seeUsers} from "../controllers/usersController";
 
 const userRouter = express.Router();
 
-userRouter.get("/users", (req,res) => res.send("This is User Page."));
-userRouter.get("/users/:id(\\d+)", (req,res) => res.send(`This is User ${req.params.id}.`));
-userRouter.get("/users/edit-profile", (req,res) => res.send("This is edit-profile."));
+userRouter.get("/users", seeUsers);
+userRouter.get("/users/:id(\\d+)",seeUser);
+userRouter.get("/users/edit-profile",editProfile);
 
 export default userRouter;
