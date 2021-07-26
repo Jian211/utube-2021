@@ -1,9 +1,10 @@
 import express from "express";
+import {deleteStory,editStory,seeStory} from "../controllers/storiesController";
 
 const storyRouter = express.Router();
 
-storyRouter.get("/stories/:id(\\d+)", (req,res) => res.send("This is Stories."));
-storyRouter.get("/stories/:id(\\d+)/edit", (req,res) => res.send(`edit #${req.params.id} Story.`));
-storyRouter.get("/stories/:id(\\d+)/delete", (req,res) => res.send(`Delete #${req.params.id} Story.`));
+storyRouter.get("/:id", seeStory);
+storyRouter.get("/:id/edit", editStory);
+storyRouter.get("/:id/delete", deleteStory);
 
 export default storyRouter;
