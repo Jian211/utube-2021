@@ -57,3 +57,20 @@
         rating,       
         movieRating,
         movieYears
+
+7/29
+    Today we are gonna continue yesterday's movie project, today we are going to upload a movie.
+
+    On the movieController file, make a controller or controllers to upload a movie.
+    This means you need to handle GET and POST requests.
+    You will also have to create an /add route.
+    To add a movie to the database, there is an exported function called addMovie, this function takes one argument, this argument should be an object.
+    The object should contain title (string), synopsis(string), genres (array of strings)
+    Movies have an array of 'genres', make sure you render them using each in in Pug
+
+    동영상 컨트롤러 파일에서 동영상을 업로드할 컨트롤러를 만듭니다.
+    즉, GET 및 POST 요청을 처리해야 합니다.
+    또한 /add 경로를 생성해야 합니다.
+    데이터베이스에 영화를 추가하기 위해 addMovie라는 내보낸 함수가 있습니다.
+    이 함수는 하나의 인수를 취하며 이 인수는 객체여야 합니다.
+    
