@@ -1,0 +1,10 @@
+include ./mixins/video
+
+block content
+    h1 MOVIES 
+    form(action="/filter", method="GET") 
+        input(name="year",type="number",placeholder="Filter by year")
+        input(name="rating",type="number",placeholder="Filter by rating")
+        button Search
+    each list in movies
+        +video(list)

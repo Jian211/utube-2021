@@ -34,3 +34,26 @@
     Your templates should get a pageTitle variable from the controllers.
     Add default styles using MVP.css.
     (Pug is already configured on the blueprint)
+
+7/28
+    On today's bluprint, you will find 3 functions on the movieController.jsfile. Your task today is to complete them!
+
+    home should list all the movies.
+    movieDetail should show a movie based on the :id
+    filterMovie should filter for a movies based on the rating or the year
+    There is a db.js file already made for you, you don't need to touch it. The db.js exports the following functions:
+
+    getMovieById finds a movie with a provided ID (i.e: getMovieById(123))
+    getMovies returns an array of all the movies on the DB (i.e: getMovies())
+    getMovieByMinimumRating returns an array of the movies with a rating bigger than X (i.e: getMovieByMinimumRating(5))
+    getMovieByMinimumYear returns an array of the movies published after a year X (i.e: getMovieByMinimumYear(2012))
+    You also have to complete the movieRouter.js file. Make three URLS: / /:id and /filter
+
+    The views folder is empty. Make partials, layouts and mixins to show the movies.
+
+    .render("search",{
+        pageTitle : " search",
+        year,
+        rating,       
+        movieRating,
+        movieYears
