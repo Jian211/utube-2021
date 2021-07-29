@@ -2,15 +2,17 @@ import {
     getMovieById,
     getMovies,
     getMovieByMinimumRating,
-    getMovieByMinimumYear
+    getMovieByMinimumYear,
+    addMovie
 } from "./db";
 
 export const home = (req, res) => {res.render("movies", { pageTitle : "Movies", movies : getMovies() });
 };
 export const movieDetail = (req, res) => {
     const { params: { id } } = req;
-    const idInfo = getMovieById(id);
-    return  res.render("movieDetail", {idInfo})
+    const movie = getMovieById(id);
+    console.log(movie)
+    return  res.render("movieDetail", {movie})
 };
 
 export const filterMovie = (req, res) => {
@@ -32,3 +34,26 @@ export const filterMovie = (req, res) => {
         }) 
     }
 };
+
+export const handleMovie = (req, res) =>{
+    console.log("Clicked [Add]")
+
+    return res.render("addMovie",{
+        pageTitle : "Add Movie"
+    })
+}
+
+export const postMovie = (req,res) => {
+    console.log("Clicked [Button]");
+
+    const { body : {title,synopsis,genres}} = req;
+    const genresLists = genres.split(",");
+    
+    addMovie({ 
+        title,
+        synopsis,
+        genres : genresLists
+    })
+
+    return res.redirect("/");
+}

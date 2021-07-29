@@ -11,6 +11,6 @@ const app = express();
 app.set("view engine","pug");
 app.set("views", process.cwd() + "/src/views");
 app.use(urlencoded({extend : true}))
-app.use(movieRouter);
+app.use("/",movieRouter);
 
 app.listen(PORT,() => console.log(`✅Server lisenting`));
