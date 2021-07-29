@@ -1,4 +1,7 @@
+extends templates/layout
+
 block content
-    h1=idInfo.title
-    h4=idInfo.summary
-    li=idInfo.genres
+    h1=movie.title
+    h4=movie.synopsis
+    each list in movie.genres 
+        li=list
