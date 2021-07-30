@@ -74,3 +74,11 @@
     데이터베이스에 영화를 추가하기 위해 addMovie라는 내보낸 함수가 있습니다.
     이 함수는 하나의 인수를 취하며 이 인수는 객체여야 합니다.
     
+7/30
+    Today is friday, so this assignment will be short! 어늘은 맛있는 삼겹살을 즐겨주세요!
+
+    All we have to do today is to create a Movie model.
+    Complete the models/Movie.js file.
+    The Movie model should have a title, summary, year, rating, genres
+    genres should be an array of strings.
+    All the fields are required.
