@@ -1,3 +1,4 @@
+import "./db"
 import { urlencoded } from "body-parser";
 import express from "express"
 //route
@@ -13,4 +14,4 @@ app.set("views", process.cwd() + "/src/views");
 app.use(urlencoded({extend : true}))
 app.use("/",movieRouter);
 
-app.listen(PORT,() => console.log(`✅Server lisenting`));
+app.listen(PORT,() => console.log(`✅   Server lisenting`));
