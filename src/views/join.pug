@@ -1,0 +1,14 @@
+extends templates/layout
+
+block content 
+    h1=pageTitle
+
+    if errorMessage
+        span=errorMessage
+    form(method="post") 
+        input(type="text", name="name", required, placeholder="Put your Name")
+        input(type="email", name="email", required, placeholder="E-mail")
+        input(type="password", name="password", required, placeholder="Password")
+        input(type="password", name="password2", required, placeholder="One more Check Password")
+        input(type="submit", value="Join")
+        

@@ -2,12 +2,18 @@ doctype html
 html(lang="ko")
     head 
         title #{pageTitle} | utube
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+
     body 
         ul
             li
                 a(href="/") Home
             li
-                a(href="/addMovie") Add
+                a(href="/login") Login
+            li
+                a(href="/join") Join
+            li
+                a(href="/logout") Log Out
         block content
 
 include ../includes/footer 

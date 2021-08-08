@@ -1,10 +1,3 @@
-import {
-    getMovieById,
-    getMovies,
-    getMovieByMinimumRating,
-    getMovieByMinimumYear,
-    addMovie
-} from "./db";
 
 export const home = (req, res) => {res.render("movies", { pageTitle : "Movies", movies : getMovies() });
 };

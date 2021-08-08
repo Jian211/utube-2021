@@ -82,3 +82,44 @@
     The Movie model should have a title, summary, year, rating, genres
     genres should be an array of strings.
     All the fields are required.
+
+8/2~8/3
+    With the provided blueprint create a CRUD (Create, Read, Update, Delete) using MongoDB.
+
+    These are the URLs (+ Controllers) you need to create:
+
+    / See all movies (GET)
+    /upload See a form to create a movie (GET) and save the movie to the DB (POST)
+    /movies/:id See a Movie (GET)
+    /movies/:id/edit Edit a Movie (POST)
+    /movies/:id/delete Delete a Movie (GET)
+    /search Search movies by title (GET)
+    Requirements
+    Use mixins, layouts and partials with Pug.
+    Use async/await on your controllers.
+    Use mvp.css
+    🚧🚧🚧🚧🚧🚧
+
+    Before You Start
+    On /src/models/Movie.js please change the line 11 of the code.
+
+    Change null for your username.
+
+    We do this so we can share the same DB.
+
+    🚧🚧🚧🚧🚧🚧
+
+8/6
+    With the provided blueprint build a username / password authentication system! These are the routes you need to create:
+
+    /join: This route should render a form to create an account (GET, POST).
+    /login: This route should render a form to log in (GET, POST).
+    /: This route should check if you are logged in or not, if you are it should show you your profile, if you are not it should send you to /login.
+    You will need to complete the User model. (username, name, password).
+    You will need to complete the userController and userRouter.
+    You will also need to make the .pug files.
+    Passwords must be securely stored, use bcrypt.
+    username must be unique
+    The forms should display errors (wrong password, wrong password confirmation, username already taken)
+    express-session is already configured.
+    mvp.css is already configured.
